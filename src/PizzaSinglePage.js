@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 
 export function PizzaSinglePage(props) {
 //itt veszi át a paramétereket az App.js-ből a pizzaId-alatt:
@@ -49,7 +49,8 @@ export function PizzaSinglePage(props) {
                                     src={pizza.kepURL ? pizza.kepURL : 
                                     "https://via.placeholder.com/400x800"} 
                                     />
-                                </div>
+                                  </div>
+                                  <NavLink to="/"><button>Vissza</button></NavLink>
                             </div>
                         
                     )}
