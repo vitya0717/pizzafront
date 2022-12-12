@@ -7,19 +7,27 @@ export function PizzaCreatePage(){
             <h2>Új pizza</h2>
             <form
             onSubmit={(event) => {
+                //ez a két sor azért kell, mert szükséges megállítani a form-ot,
+                // hogy ne küldje újra az adatokat a böngészőnek, mert az nem jó,
+                //hanem itt nekünk az kívánatos, hogy elküldje az adatokat a backend-nek
             event.persist();
             event.preventDefault();
             fetch(`https://localhost:7156/pizza`, {
                 method: "POST",
+                //bekerült ez az "újítás", ami miatt nem ment:
                 headers: {
                     'Content-Type': 'application/json',
                 },
+                // itt figyeljetek, mert BAL oldalra kell amit a backend-be írunk,
+                //míg jobb oldalra az űrlap-elemek pontos nevei kerültek, kicsivel!!!
+
                 body: JSON.stringify({
                     name: event.target.elements.name.value,
                     isGlutenFree: event.target.elements.isglutenfree.value,
                     kepURL: event.target.elements.kepurl.value,
                 }),
             })
+            // ha kész, visszadob a főoldalra! Return-öl a backend-ről minden infót!
             .then(() =>
             {
                 navigate("/");
