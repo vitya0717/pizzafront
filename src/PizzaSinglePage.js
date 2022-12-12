@@ -2,15 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 export function PizzaSinglePage(props) {
-
+//itt veszi át a paramétereket az App.js-ből a pizzaId-alatt:
     const params = useParams();
     const id = params.pizzaId;
     const[pizza,setPizza] = useState([]);
     const[isPending, setPending] = useState(false);
     useEffect(() => {
         setPending(true);
+        //átírtam async-await-esre "simáról":
+        // lényege, hogy aszinkron küldi az adatokat, és míg betölt, kirajzolja a pörgettyűt,
+        // ha betöltött, akkor pedig a pizza képet és a többi információt.
         (async () => {
             try {
+                //itt újabb infó: ha nem ` ` között hanem " " között írjuk be az alábbi kódot,
+                // akkor nem megy, mert egyszerűen nem átveszi az id-t, hanem
+                // megpróbálja átkódolni html-kódra, ami nem sikerül és hibával tér vissza,
+                // illetve a fetch-elés nem hajtódik végre...
         const res= await fetch(`https://localhost:7156/pizza/${id}`)
             const pizza = await res.json();
             setPizza(pizza);
@@ -24,6 +31,8 @@ export function PizzaSinglePage(props) {
     })
     ();
  }, [id]);
+ // minden egyes id-változásra újra-rendereli az oldalt!
+ // ha az id-nél üresen hagyjuk, akkor csak 1x renderelődik le az oldal és vége...
 
     return (
         <div className="p-5 m-auto text-center content bg-lavender">
