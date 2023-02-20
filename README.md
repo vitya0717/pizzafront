@@ -2,13 +2,21 @@
 # Pizza lekérdező oldal - kezdő verzió - React-ban építve
 Ez a pizza lekérdező oldal React-ban lett megírva és ASP.NET backend-ről (Linuxos) fetch-el le végpontokat. 
 A CRUD teljes és ez az egész csak oktatási célra készült.
+A frontend a nemethb.linkpc.net - ingyenes domain alá lett deployolva,
+míg a backend egy - szintén ingyenes - sulla.ddns.net domain alá. Egyiknek sincs közvetlen A-rekordja, csak aldomain-t kaptam hozzá, illetve CNAME-et kellett beállítani a Netlify-hoz.
+
+# Frontend
+[Frontend](https://nemethb.linkpc.net)
 
 # Végpontok listája (swagger):
-[Swagger](https://sulla.ddns.net:8080/swagger/index.html)
+[Swagger](https://sulla.ddns.net:7156/swagger/index.html)
 
-# Pizza:
-[Pizza végpont](http://sulla.ddns.net:8080/Pizza)<br>
-[Pizza végpont ID-ra (pl.1)](http://sulla.ddns.net:8080/Pizza/1)
+# Pizza backend:
+[Pizza végpont](http://sulla.ddns.net:7156/Pizza)<br>
+[Pizza végpont ID-ra (pl.1)](http://sulla.ddns.net:7156/Pizza/1)
 
 # Deploy: 
 Netlify-on (link fent), hozzá kapcsoltam egy domain nevet, SSL-el. Sajnos a backend-nek még vannak gyerekbetegségei, így nem kezeli rendesen az SSL-t, ezért a legtöbb böngésző szerint nem biztonságos.
+
+# Known issues / ismert problémák:
+A végpont csak akkor mutat teljes funkcionalitást, ha sikerült korábban betölteni legalább az egyik pizza végpontot ([pizza végpont](https://sulla.ddns.net:7156/Pizza))
