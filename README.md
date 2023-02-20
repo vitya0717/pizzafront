@@ -20,3 +20,4 @@ Netlify-on (link fent), hozzá kapcsoltam egy domain nevet, SSL-el. Sajnos a bac
 
 # Known issues / ismert problémák:
 A végpont csak akkor mutat teljes funkcionalitást, ha sikerült korábban betölteni legalább az egyik pizza végpontot ([pizza végpont](https://sulla.ddns.net:7156/Pizza))
+Ez a probléma a helytelen https-certificate telepítéséből adódott ASP.NET Linux környezetben (work in progress)
