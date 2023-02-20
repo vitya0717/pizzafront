@@ -12,7 +12,7 @@ export function PizzaCreatePage(){
                 //hanem itt nekünk az kívánatos, hogy elküldje az adatokat a backend-nek
             event.persist();
             event.preventDefault();
-            fetch(`https://localhost:7156/pizza`, {
+            fetch(`https://sulla.ddns.net:7156/Pizza`, {
                 method: "POST",
                 //bekerült ez az "újítás", ami miatt nem ment:
                 headers: {
