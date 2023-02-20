@@ -18,7 +18,7 @@ export function PizzaSinglePage(props) {
                 // akkor nem megy, mert egyszerűen nem átveszi az id-t, hanem
                 // megpróbálja átkódolni html-kódra, ami nem sikerül és hibával tér vissza,
                 // illetve a fetch-elés nem hajtódik végre...
-        const res= await fetch(`https://localhost:7156/pizza/${id}`)
+        const res= await fetch(`https://sulla.ddns.net:7156/Pizza/${id}`)
             const pizza = await res.json();
             setPizza(pizza);
         }
