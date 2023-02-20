@@ -7,7 +7,7 @@ A CRUD nem teljes (csak backend-en) és ez az egész csak oktatási célra kész
 [Swagger](https://sulla.ddns.net:8080/swagger/index.html)
 
 # Pizza:
-[Pizza végpont](http://sulla.ddns.net:8080/Pizza)
+[Pizza végpont](http://sulla.ddns.net:8080/Pizza)<br>
 [Pizza végpont ID-ra (pl.1)](http://sulla.ddns.net:8080/Pizza/1)
 
 # Deploy: 
