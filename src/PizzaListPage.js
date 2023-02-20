@@ -7,7 +7,7 @@ export function PizzaListPage() {
     const[isFetchPending, setFetchPending] = useState(false);
     useEffect(() => {
         setFetchPending(true);
-        fetch("https://localhost:7156/pizza")
+        fetch("https://sulla.ddns.net:7156/Pizza")
             .then((res) => res.json())
             .then((pizzak) => setPizzas(pizzak))
             .catch(console.log)
