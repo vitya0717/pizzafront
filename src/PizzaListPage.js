@@ -8,7 +8,7 @@ export function PizzaListPage() {
     
     useEffect(() => {
         setFetchPending(true);
-        fetch("https://sulla.ddns.net:7156/Pizza")
+        fetch("https://pizza.kando-dev.eu/Pizza")
             .then((res) => res.json())
             .then((pizzak) => setPizzas(pizzak))
             .catch(console.log)
