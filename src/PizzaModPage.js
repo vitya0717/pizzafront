@@ -14,7 +14,7 @@ export function PizzaModPage(props) {
         (async () => {
 
             try {
-                const res = await fetch(`https://sulla.ddns.net:7156/Pizza/${id}`)
+                const res = await fetch(`https://pizza.kando-dev.eu/Pizza/${id}`)
                 const pizza = await res.json();
                 setPizza(pizza);
                 setModname(pizza.name);
@@ -48,7 +48,7 @@ export function PizzaModPage(props) {
             onSubmit={(event) => {
                 event.persist();
                 event.preventDefault();
-                fetch(`https://sulla.ddns.net:7156/Pizza/${id}`, {
+                fetch(`https://pizza.kando-dev.eu/Pizza/${id}`, {
                     method: "PUT",
                     headers: {
                         'Content-Type': 'application/json',
