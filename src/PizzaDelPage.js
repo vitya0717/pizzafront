@@ -11,7 +11,7 @@ export function PizzaDelPage(props) {
         setPending(true);
         (async () => {
             try {
-        const res= await fetch(`https://sulla.ddns.net:7156/Pizza/${id}`)
+        const res= await fetch(`https://pizza.kando-dev.eu/Pizza/${id}`)
             const pizza = await res.json();
             setPizza(pizza);
         }
@@ -46,7 +46,7 @@ export function PizzaDelPage(props) {
                 //hanem itt nekünk az kívánatos, hogy elküldje az adatokat a backend-nek
             event.persist();
             event.preventDefault();
-            fetch(`https://sulla.ddns.net:7156/Pizza/${id}`, {
+            fetch(`https://pizza.kando-dev.eu/Pizza/${id}`, {
                 method: "DELETE",
                 //bekerült ez az "újítás", ami miatt nem ment:
                 
