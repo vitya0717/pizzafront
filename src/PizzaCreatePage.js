@@ -30,29 +30,29 @@ export function PizzaCreatePage(){
             // ha kész, visszadob a főoldalra! Return-öl a backend-ről minden infót!
             .then(() =>
             {
-                navigate("/");
+                //navigate("/");
             })
             .catch(console.log);
             }}>
             <div className="form-group row pb-3">
                 <label className="col-sm-3 col-form-label">Pizza név:</label>
                 <div className="col-sm-9">
-                <input type="text" name="name" className="form-control" />
+                <input role="pizza-name" type="text" name="name" className="form-control" />
                 </div>
             </div>
             <div className="form-group row pb-3">
                 <label className="col-sm-3 col-form-label">Gluténmentes:</label>
                 <div className="col-sm-9">
-                <input type="number" name="isglutenfree" className="form-control" />
+                <input role="glutenfree" type="number" name="isglutenfree" className="form-control" />
                 </div>
             </div>
             <div className="form-group row pb-3">
                 <label className="col-sm-3 col-form-label">Kép URL-je:</label>
                 <div className="col-sm-9">
-                <input type="text" name="kepurl" className="form-control" />
+                <input role="img-url" type="text" name="kepurl" className="form-control" />
                 </div>
             </div>
-            <button type="submit" className="btn btn-success">
+            <button role="sendButton" type="submit" className="btn btn-success">
                 Küldés
             </button>
             </form>

@@ -19,13 +19,13 @@ export function PizzaListPage() {
     return (
         <div className="p-5 m-auto text-center content bg-ivory">
             {isFetchPending ? (
-                <div className="spinner-border"></div>
+                <div className="spinner-border" role="progressbar"></div>
             ) : (
                 <div>
                     <h2>Pizzák</h2>
                     {pizzas.map((pizza) => (
 
-                        <div className="card col-sm-3 d-inline-block m-1 p-2">
+                        <div key={pizza.id} className="card col-sm-3 d-inline-block m-1 p-2">
                             <p className="text-dark">{pizza.name}</p>
                             <p className="text-danger">Gluténmentes: {pizza.isGlutenFree > 0 ? "igen" : "nem"}</p>
                             <div className="card-body">
@@ -36,9 +36,9 @@ export function PizzaListPage() {
                                         src={pizza.kepURL ? pizza.kepURL :
                                             "https://via.placeholder.com/400x800"} /></NavLink>
                                 <br />
-                                <NavLink key="y" to={"/mod-pizza/" + pizza.id}>
+                                <NavLink role='mod-pizza-link' key="y" to={"/mod-pizza/" + pizza.id}>
                                     <i className="bi bi-pencil"></i></NavLink> &nbsp;&nbsp;
-                                    <NavLink key="x" to={"/del-pizza/" + pizza.id}><i className="bi bi-trash3"></i></NavLink>
+                                    <NavLink role='del-pizza-link' key="x" to={"/del-pizza/" + pizza.id}><i className="bi bi-trash3"></i></NavLink>
                             </div>
                         </div>
 

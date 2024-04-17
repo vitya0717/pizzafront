@@ -66,31 +66,31 @@ export function PizzaModPage(props) {
                 .catch(console.log);
             }}>
                 <div className="form-group row pb-3">
-                    <label className="col-sm-3 col-form-label">Pizza ID:</label>
+                    <label className="col-sm-3 col-form-label" htmlFor='id'>Pizza ID:</label>
                     <div className="col-sm-9">
-                        <input type="text" name="id" className="form-control" value={pizza.id}/>
+                        <input role='pizza-id' type="text" name="id" className="form-control" value={pizza.id}/>
                     </div>
                 </div>
                 <div className="form-group row pb-3">
                     <label className="col-sm-3 col-form-label">Pizza név:</label>
                     <div className="col-sm-9">
-                        <input type="text" name="name" className="form-control" defaultValue={pizza.name} onChange={modName}/>
+                        <input role='pizza-name' type="text" name="name" className="form-control" defaultValue={pizza.name} onChange={modName}/>
                     </div>
                 </div>
                 <div className="form-group row pb-3">
                     <label className="col-sm-3 col-form-label">Gluténmentes:</label>
                     <div className="col-sm-9">
-                        <input type="text" name="isglutenfree" className="form-control" defaultValue={pizza.isGlutenFree} onChange={modIsglutenfree}/>
+                        <input role='glutenfree' type="text" name="isglutenfree" className="form-control" defaultValue={pizza.isGlutenFree} onChange={modIsglutenfree}/>
                     </div>
                 </div>
                 <div className="form-group row pb-3">
                     <label className="col-sm-3 col-form-label">Kép URL-je:</label>
                     <div className="col-sm-9">
-                        <input type="text" name="kepurl" className="form-control" defaultValue={pizza.kepURL} onChange={modKepurl}/>
+                        <input role='img-url' type="text" name="kepurl" className="form-control" defaultValue={pizza.kepURL} onChange={modKepurl}/>
                     <img src={pizza.kepURL} height="200px" alt={pizza.name}/>
                     </div>
                 </div>
-                <button type="submit" className="btn btn-success">Küldés</button>
+                <button role='sendButton' type="submit" className="btn btn-success">Küldés</button>
             </form>
         </div>
     );
